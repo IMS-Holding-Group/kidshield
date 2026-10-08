@@ -128,7 +128,7 @@ def init_db():
 
     cursor.execute('SELECT COUNT(*) FROM users')
     if cursor.fetchone()[0] == 0:
-        cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', ('admin', 'admin123'))
+        cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', ('admin', ''))
         conn.commit()
     cursor.execute('SELECT id FROM users WHERE username = ?', ('parent_demo',))
     if not cursor.fetchone():
